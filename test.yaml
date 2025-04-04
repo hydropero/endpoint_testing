@@ -1,0 +1,28 @@
+
+- name: good get - real site
+  url: https://mylesdomain.com:443 
+  method: GET
+  headers:
+    content-type: application/json
+
+- name: good get
+  url: https://f5ec1fc2-f192-4216-acdb-ea74203dce36.mock.pstmn.io:443/GoodGetEndpoint
+  method: GET
+  headers:
+    content-type: application/json
+
+- name: good post
+  url: https://f5ec1fc2-f192-4216-acdb-ea74203dce36.mock.pstmn.io:443/GoodPostEndpoint
+  method: POST
+  body: |
+    {"name": "Myles"}
+  headers:
+    content-type: application/json
+  
+- name: slow get
+  url: https://d1287dfc-7ea7-4d3a-ad1d-ef2d408a9416.mock.pstmn.io/SlowGetEndpoint
+  method: GET
+  headers:
+    content-type: application/json
+
+
