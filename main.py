@@ -29,7 +29,7 @@ def check_health(endpoint):
             response = requests.request(method, url, headers=headers)
         response_ms = round(response.elapsed.total_seconds() * 1000)
         if 200 <= response.status_code < 300 and response.elapsed.total_seconds() * 1000 < 500 and response.elapsed.total_seconds() < 400:
-            logging.info(f"Endpoint: {url} is UP but response time is high: {response_ms} ms")
+            logging.warning(f"Endpoint: {url} is UP but response time is high: {response_ms} ms")
             return "UP"
         elif 200 <= response.status_code < 300 and response.elapsed.total_seconds() * 1000 < 500 and response.elapsed.total_seconds() < 400:
             logging.info(f"Endpoint: {url} is UP and response time is normal: {response_ms} ms")
